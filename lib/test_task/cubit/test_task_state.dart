@@ -1,6 +1,6 @@
 part of 'test_task_bloc.dart';
 
-enum TestTaskStatus { initial, loaded, failure }
+enum TestTaskStatus { initial, failure }
 
 final class TestTaskState extends Equatable {
   final bool isChecked;
