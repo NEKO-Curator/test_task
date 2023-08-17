@@ -7,6 +7,13 @@ sealed class TestTaskEvent extends Equatable {
   List<Object> get props => [];
 }
 
+final class TestTaskFirstCellChanged extends TestTaskEvent {
+  const TestTaskFirstCellChanged();
+
+  @override
+  List<Object> get props => [];
+}
+
 final class TestTaskSecondCellChanged extends TestTaskEvent {
   const TestTaskSecondCellChanged();
 
@@ -19,12 +26,4 @@ final class TestTaskCheckChanged extends TestTaskEvent {
 
   @override
   List<Object> get props => [];
-}
-
-final class TestTaskChangeConstraintWidth extends TestTaskEvent {
-  final double width;
-  const TestTaskChangeConstraintWidth(this.width);
-
-  @override
-  List<Object> get props => [width];
 }

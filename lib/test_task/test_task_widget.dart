@@ -33,9 +33,20 @@ class _TestTaskWidgetState extends State<TestTaskWidget> {
                 child: LayoutBuilder(
                   builder: (BuildContext context, BoxConstraints constraints) {
                     if (!state.isSecondCellVisible) {
-                      context.read<TestTaskBloc>().add(
-                            TestTaskChangeConstraintWidth(constraints.maxWidth),
-                          );
+                      final textPainter = TextPainter(
+                        text: TextSpan(
+                            text: state.text,
+                            style: const TextStyle(color: Colors.black)),
+                        maxLines: 1,
+                        textDirection: TextDirection.ltr,
+                      );
+
+                      textPainter.layout(maxWidth: constraints.maxWidth - 12.0);
+                      if (!textPainter.didExceedMaxLines) {
+                        context.read<TestTaskBloc>().add(
+                              const TestTaskFirstCellChanged(),
+                            );
+                      }
                     }
 
                     return Container(
