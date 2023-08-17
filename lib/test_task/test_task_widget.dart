@@ -57,7 +57,7 @@ class _TestTaskWidgetState extends State<TestTaskWidget> {
                       ),
                       child: Center(
                         child: Text(
-                          widget.text,
+                          state.text,
                           style: const TextStyle(color: Colors.black),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
