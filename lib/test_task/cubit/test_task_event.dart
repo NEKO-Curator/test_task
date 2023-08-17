@@ -9,21 +9,12 @@ sealed class TestTaskEvent extends Equatable {
 
 final class TestTaskFirstCellChanged extends TestTaskEvent {
   const TestTaskFirstCellChanged();
-
-  @override
-  List<Object> get props => [];
 }
 
 final class TestTaskSecondCellChanged extends TestTaskEvent {
   const TestTaskSecondCellChanged();
-
-  @override
-  List<Object> get props => [];
 }
 
 final class TestTaskCheckChanged extends TestTaskEvent {
   const TestTaskCheckChanged();
-
-  @override
-  List<Object> get props => [];
 }
