@@ -23,11 +23,14 @@ class MyApp extends StatelessWidget {
         body: Column(
           children: [
             TestTaskWidget(
-                text:
-                    'Какой-то текстffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff',
-                isChecked: true),
-            // TestTaskWidget(text: 'Какой-то текст', isChecked: true),
-            // TestTaskWidget(text: '1', isChecked: false),
+              text:
+                  'Какой-то текстffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff',
+              isChecked: true,
+            ),
+            TestTaskWidget(
+              text: 'Какой-то текст но чуть короче, чем первый',
+              isChecked: true,
+            ),
           ],
         ),
       ),

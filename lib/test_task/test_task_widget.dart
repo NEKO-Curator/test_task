@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:test_task/test_task/cubit/test_task_bloc.dart';
+import 'package:test_task/test_task/widgets/text_cell_widget.dart';
+import 'package:test_task/test_task/bloc/test_task_bloc.dart';
 import 'package:test_task/test_task/widgets/dotted_separator_widget.dart';
 
 class TestTaskWidget extends StatefulWidget {
@@ -35,8 +36,9 @@ class _TestTaskWidgetState extends State<TestTaskWidget> {
                     if (!state.isSecondCellVisible) {
                       final textPainter = TextPainter(
                         text: TextSpan(
-                            text: state.text,
-                            style: const TextStyle(color: Colors.black)),
+                          text: state.text,
+                          style: const TextStyle(fontSize: 20.0),
+                        ),
                         maxLines: 1,
                         textDirection: TextDirection.ltr,
                       );
@@ -48,22 +50,7 @@ class _TestTaskWidgetState extends State<TestTaskWidget> {
                             );
                       }
                     }
-
-                    return Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                      height: 50,
-                      decoration: BoxDecoration(
-                        border: Border.all(),
-                      ),
-                      child: Center(
-                        child: Text(
-                          state.text,
-                          style: const TextStyle(color: Colors.black),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ),
-                    );
+                    return const MinimalTextSize();
                   },
                 ),
               ),
